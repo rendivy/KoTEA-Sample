@@ -21,3 +21,6 @@ dependencyResolutionManagement {
 
 rootProject.name = "kotea-sample"
 include(":app")
+include(":feature-account-list-api")
+include(":featue-account-list-impl")
+include(":feature-account-list-ui")
