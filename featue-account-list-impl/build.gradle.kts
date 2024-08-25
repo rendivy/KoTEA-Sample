@@ -1,7 +1,10 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.kotlin.android)
+    id("kotlin-kapt")
+    id("com.google.dagger.hilt.android")
 }
+
 
 android {
     namespace = "com.yuriyyangel.featue_account_list_impl"
@@ -34,10 +37,19 @@ android {
 
 dependencies {
 
-    implementation(libs.androidx.core.ktx)
+    implementation(project(":feature-account-list-api"))
+
     implementation(libs.androidx.appcompat)
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.room)
+    implementation(libs.hilt.android)
     implementation(libs.material)
+    implementation(libs.hilt.android)
+
     testImplementation(libs.junit)
+
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    kapt(libs.hilt.android.compiler)
 }
